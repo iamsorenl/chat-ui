@@ -1,0 +1,105 @@
+/* Override these variables to theme. */
+.chatui {
+  --chatui-bg: #fff;
+  --chatui-fg: #1a1a1a;
+  --chatui-border: #ddd;
+  --chatui-user-bg: #1a1a1a;
+  --chatui-user-fg: #fff;
+  --chatui-assistant-bg: #f1f1f1;
+  --chatui-assistant-fg: #1a1a1a;
+  --chatui-accent: #2563eb;
+  --chatui-error: #b91c1c;
+  --chatui-radius: 12px;
+  --chatui-gap: 8px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  background: var(--chatui-bg);
+  color: var(--chatui-fg);
+  font: inherit;
+}
+.chatui-messages {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--chatui-gap);
+  padding: 12px;
+}
+.chatui-message {
+  max-width: 80%;
+  padding: 8px 12px;
+  border-radius: var(--chatui-radius);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.chatui-user {
+  align-self: flex-end;
+  background: var(--chatui-user-bg);
+  color: var(--chatui-user-fg);
+}
+.chatui-assistant {
+  align-self: flex-start;
+  background: var(--chatui-assistant-bg);
+  color: var(--chatui-assistant-fg);
+}
+.chatui-file {
+  display: block;
+  font-size: 0.8em;
+  opacity: 0.8;
+}
+.chatui-error {
+  padding: 6px 12px;
+  color: var(--chatui-error);
+  font-size: 0.9em;
+}
+.chatui-form {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--chatui-gap);
+  padding: 12px;
+  border-top: 1px solid var(--chatui-border);
+}
+.chatui-input {
+  flex: 1;
+  resize: none;
+  padding: 8px 10px;
+  border: 1px solid var(--chatui-border);
+  border-radius: var(--chatui-radius);
+  font: inherit;
+  background: transparent;
+  color: inherit;
+}
+.chatui-input:focus-visible,
+.chatui-button:focus-visible {
+  outline: 2px solid var(--chatui-accent);
+  outline-offset: 1px;
+}
+.chatui-button {
+  padding: 8px 14px;
+  border: 1px solid var(--chatui-border);
+  border-radius: var(--chatui-radius);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.chatui-primary {
+  background: var(--chatui-accent);
+  border-color: var(--chatui-accent);
+  color: #fff;
+}
+.chatui-button:disabled,
+.chatui-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.chatui-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

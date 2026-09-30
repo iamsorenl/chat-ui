@@ -1,0 +1,37 @@
+{
+  "name": "chat-ui",
+  "version": "0.1.0",
+  "description": "Small React chat kit: headless useChat hook, an unstyled-by-default ChatPanel, and fetch transport helper. Zero runtime deps.",
+  "type": "module",
+  "license": "MIT",
+  "repository": "github:iamsorenl/chat-ui",
+  "engines": { "node": ">=20" },
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "default": "./dist/index.js" },
+    "./useChat": { "types": "./dist/useChat.d.ts", "default": "./dist/useChat.js" },
+    "./ChatPanel": { "types": "./dist/ChatPanel.d.ts", "default": "./dist/ChatPanel.js" },
+    "./transport": { "types": "./dist/transport.d.ts", "default": "./dist/transport.js" },
+    "./styles.css": "./dist/chat-panel.css"
+  },
+  "files": ["dist"],
+  "peerDependencies": {
+    "react": "^18 || ^19"
+  },
+  "scripts": {
+    "build": "tsc && cp src/chat-panel.css dist/chat-panel.css",
+    "prepare": "npm run build",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit && tsc -p tsconfig.test.json"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^16",
+    "@types/node": "^24",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "jsdom": "^26",
+    "react": "^19",
+    "react-dom": "^19",
+    "typescript": "^5.9",
+    "vitest": "^3"
+  }
+}
